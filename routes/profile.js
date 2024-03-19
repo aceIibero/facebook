@@ -3,7 +3,7 @@ const route = express.Router()
 
 //sudah menangani bagian profile dalam file controller jadi tidak perlu disebutkan ulang
 route.get("/", (rSeq,res) => {
-    res.send("Ini Profile gan !!")
+    res.render("./profile/home")
 })
 
 route.get("/all", (req,res) => {
@@ -13,7 +13,7 @@ route.get("/all", (req,res) => {
 route.get("/:nama", (req,res) => {
     // res.send("Haii "+ req.params.nama)
     const nama = req.params.nama
-    res.render("./profile", {
+    res.render("./profile/single", {
         name : nama
     })
 })

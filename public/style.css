@@ -1,3 +1,38 @@
+body{
+    background-color: #fefae0;
+}
+
 h1{
-    color: aquamarine;
+    color: crimson;
+}
+
+header{
+    background-color: bisque;
+    padding: 10px;
+}
+
+.button{
+    display: flex;
+}
+
+.button a{
+    padding: 5px;
+    color:brown;
+    text-decoration: none;
+}
+
+.button a:hover{
+    color: crimson;
+    font-weight: bold;
+}
+
+main{
+    margin: 15px;
+    
+}
+
+main li {
+    margin: 10px;
+    color: #4a4e69;
+    list-style-type: none;
 }
