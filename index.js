@@ -1,9 +1,8 @@
 const express = require("express")
 const app = express()
+const homeRoute = require("./routes/home")
 
-app.get("/",(req,res) => {
-    res.send("Diterima")
-})
+app.use("/", homeRoute)
 
 app.listen(5555,() => 
     console.log("aplikasi berjalan di port 5555 !")
