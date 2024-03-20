@@ -2,13 +2,18 @@ const express = require("express")
 const route = express.Router()
 const db = require("../db")
 
+console.log( process.env.DB_USER)
 //sudah menangani bagian profile dalam file controller jadi tidak perlu disebutkan ulang
 route.get("/",async (req,res) => {
+    try { 
     const profiles = await db.query("select * from profiles")
     // console.log(profiles)
     res.render("./profile/home", {
         profiles
     })
+    } catch (error) {
+        res.status(500).send(error)
+    }
 })
 
 route.get("/all", (req,res) => {
