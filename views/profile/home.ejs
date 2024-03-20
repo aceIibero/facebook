@@ -1,7 +1,8 @@
 <%- include('../partials/header') %>
 <h3>DAFTAR PROFIL GANSZ</h3>
 <ul>
-    <li><a href="/profile/Adi">Adi</a></li>
-    <li><a href="/profile/Pras">Pras</a></li>
+  <% profiles.forEach(function(item) { %>
+  <li><a href="/profile/<%= item.username%>"><%= item.name%></a></li>
+  <% }); %>
 </ul>
 <%- include('../partials/footer') %>
