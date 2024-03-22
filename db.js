@@ -7,8 +7,9 @@ const poolConfig = {
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
 }
+// hidden user by env
 
-console.log( process.env.DB_USER)
+
 
 // ADD MySQL sock path in production
 if(isProduction){

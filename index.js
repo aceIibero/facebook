@@ -12,8 +12,10 @@ console.log( process.env.DB_USER)
 // console.log(process.env.DB_USER)
 
 app.use(express.static("public"))
+//set akses folder public
 app.set('view engine', 'ejs');
 app.set("views", __dirname + "/views")
+//set ejs
 
 app.use(morgan('combined'));
 

@@ -15,6 +15,7 @@ route.get("/",async (req,res) => {
         res.status(500).send(error)
     }
 })
+// handling error
 
 route.get("/all", (req,res) => {
     res.send("Ini Halaman semua profil")
@@ -22,13 +23,23 @@ route.get("/all", (req,res) => {
 
 route.get("/:nama",async (req,res) => {
     // res.send("Haii "+ req.params.nama)
+try {
     const username = req.params.nama
     const data = await db.query("select * from profiles where username = ?",[username])
     console.log(data)
+
+    if(data.length === 0){
+        res.send('tidak ada user '+ username)
+    }
+
     res.render("./profile/single", {
         username,
         data : data[0]
     })
+} catch (error) {
+    res.send("tidak ada prifile dengan username tersebut")
+    
+}
 })
 
 module.exports = route
